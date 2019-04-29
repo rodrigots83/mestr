@@ -1,0 +1,26 @@
+label	replace by
+compressed sensing	compressive sensing
+cross-correlation	cross correlation
+de-noising	denoising
+detectors	detector
+emd	empirical mode decomposition
+empirical mode decomposition (emd)	empirical mode decomposition
+global navigation satellite system (gnss)	global navigation satellite system
+global positioning system (gps)	global positioning system
+independent component analysis (ica)	independent component analysis
+interference suppression	interference cancellation
+interferometry	interferometer
+lyapunov exponents	lyapunov exponent
+modeling	model
+neural networks	neural network
+nonlinear systems	nonlinear system
+optical fiber sensors	optical fiber sensor
+phase sensitive detector	phase sensitive detection
+signals	signal
+signal-to-noise ratio (snr)	signal-to-noise ratio
+wavelets	wavelet
+wavelet transformation	wavelet transform
+weak signals	weak signal
+weak signal detecting	weak signal detection
+weak signals detection	weak signal detection
+weak-signal detection	weak signal detection

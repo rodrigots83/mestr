@@ -1,0 +1,6 @@
+label	replace by
+ansoff, h.i.	ansoff, i.h.
+ansoff, i.	ansoff, i.h.
+lesca, n.	lesca, h.
+porter, a.l.	porter, m.e.
+schoemaker, p.	schoemaker, p.j.h.

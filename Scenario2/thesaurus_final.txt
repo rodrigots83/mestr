@@ -1,0 +1,3 @@
+label	replace by
+ansoff, h.i.	ansoff, i.h.
+ansoff, i.	ansoff, i.h.
