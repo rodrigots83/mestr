@@ -1,0 +1,112 @@
+\documentclass[12pt,openright,twoside,a4paper,
+    chapter=TITLE, % ti´tulos de capi´tulos convertidos em letras maiu´sculas 
+    section=TITLE, % ti´tulos de sec¸o~es convertidos em letras maiu´sculas 
+    subsection=TITLE, % ti´tulos de subsec¸o~es convertidos em letras maiu´sculas 
+    subsubsection=TITLE, % ti´tulos de subsubsec¸o~es em letras maiu´sculas 
+    subsubsubsection=TITLE,% ti´tulos de subsubsubsec¸o~es em letras maiu´sculas
+    english,french,spanish,brazil]{abntex2}
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm} % tente tambe´m \onelineskip
+\setlength{\ABNTEXcitacaorecuo}{1.8cm}
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}				    % Citações padrão ABNT (alfa)
+\usepackage{hyperref}  % controla a formac¸a~o do i´ndice
+
+% IMAGENS
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+\title{Sinais Fracos}
+\author{Rodrigo Teixeira dos Santos}
+\date{Maio/2019}
+\tipotrabalho{Dissertação de Mestrado}
+\instituicao{UCB - Universidade Católica de Brasília}
+%\localidade{Brasília - DF}
+
+\begin{document}
+
+\maketitle
+
+%\pdfbookmark[0]{\contentsname}{toc}
+%\tableofcontents*
+
+%\chapter*{Introdução}
+%\addcontentsline{toc}{chapter}{Introdução}
+
+\chapter{Embasamento Teórico}
+
+\section{Sinais Fracos}
+
+%Há tempos técnicas para buscar prever o futuro seduzem os seres humanos. Seja a previsão de pequenas ações, com fins de adquirir vantagens de pequeno porte, sejam aquelas avultosas, de grande porte, onde o resultado venha trazer grandes melhorias para uma pessoa específica ou grupo de pessoas, bem como evitar que determinadas ações tenham um fim divergente que o imaginado. O futuro, apesar de incerto, pode sim ser clarificado se utilizadas as ferramentas e técnicas corretas, na forma correta. Um dos pioneiros na busca de respostas rápidas para incidentes futuros é Igor H. Ansoff que buscou consolidar conceitos com o objetivo de prever e evitar surpresas estratégicas que nada mais são que eventos considerados ameaçadores e não familiares confrontados por uma empresa \cite{1975Ansoff} [p.22].%
+Como colocado por \cite[p.32]{1975Ansoff} há "uma inabilidade do planejamento estratégico em lidar rapidamente e com eficiência oportunidades e/ou ameaças que são desenvolvidas inesperadamente (tradução nossa)", sendo que as razões para isso são diversas, dentre elas encontra-se a "inflexibilidade organizacional do planejamento estratégico, o qual não pode lidar de forma efetiva com questões que podem afetar de forma simultânea mais de uma unidade de planejamento (tradução nossa)".  \cite[p.32]{1975Ansoff} Além dessas, são colocados mais dois fatores interessantes do porquê essa inabilidade existe, o primeiro é dificuldade que as empresas tem de manter uma revisão anual do planejamento estratégico e todo o penoso processo que ele representa; em segundo lugar, a crescente incidência de "questões" as quais foram causadas por eventos que vieram de fontes não mapeadas pela empresa e que causam um impacto efetivo. \cite{1980Ansoff}
+
+Para se manter um alinhamento de entendimento, o termo "questões" pode ser entendido como:
+\begin{quote}
+"A 'questão' pode ser bem-vinda, uma oportunidade a ser abraçada no ambiente, ou uma força interna (da organização), ou uma fraqueza interna (da organização), a qual coloca em risco a busca pelo sucesso, até mesmo a sobrevivência da organização (tradução nossa)" \cite{1980Ansoff}
+\end{quote}
+
+Empresas enfrentam um paradoxo no momento em que elas agem em resposta a uma possível mudança ambiental: aguardar ter mais informações sobre essa mudança e agir contra uma possível crise ou trabalhar em cima de informações vagas que não trazem solidez para o um plano estratégico? O autor sugere uma solução para esse paradoxo que é o acompanhamento dessas informações durante os seus desenvolvimentos, dando as devidas atenções nos momentos oportunos e, ao mesmo tempo, flexibilizando o planejamento estratégico de modo que possam agir assim que as informações passarem mais solidez para a empresa. Deste processo de trabalho surge o conceito de sinais fracos, ou seja, não aguardar para que um sinal esteja forte o suficiente para que a empresa haja, mas monitorar sinais de menor potencial a fim de atacar a oportunidade ou a ameaça o quanto antes. \cite[p.23]{1975Ansoff}
+
+Portanto, quando uma ameaça/oportunidade é vislumbrada no futuro, ela precisa ser municiada constantemente com informações, mesmo que vagas, acerca dela, para que, de forma progressiva, ela seja desenvolvida ao longo do tempo. \cite[p.24]{1975Ansoff} afirma que "esse progresso é caracterizado por sucessivos estados de conhecimento (tradução nossa)".
+
+\begin{figure}[htb]
+\caption{\label{fig_circulo} States of Ignorance Under Discontinuity}
+\begin{center}
+\includegraphics{1975_ansoff_states_of_ignorance.jpg}
+\end{center}
+\legend{Fonte: \cite{1975Ansoff}}
+\end{figure}
+
+A intenção é enfatizar que as informações, ao serem utilizadas para o planejamento estratégico, devem satisfazer duas condições: 
+\begin{quote}
+"Primeiro, precisam estar disponíveis cedo o suficiente para que se tenha tempo para a preparação de planos e programas (...). Segundo, se os planos e programas estratégicos são criados, o conteúdo  da previsão precisa ser adequado para permitir que gestores estimem seus impactos na empresa, identificando respostas específicas e estimando o possível impacto no lucro atrelado a essas respostas. (tradução nossa)". \cite{1975Ansoff}
+\end{quote}
+
+Colocado assim, é sugerida a criação do \textit{SIM}, Sistema de gestão estratégica por questões (\textit{Strategic issue management} em inglês), como sendo uma "expansão e extensão de uma analise estratégica por questões, a qual tem emergido na prática ao longo dos últimos anos (...) admitindo sinais fracos como base para a tomada de decisão, e a extensão era sair de um sistema de planejamento puro para um sistema de ação. (tradução nossa)". \cite{1975Ansoff} Em outras palavras, o \textit{SIM} é "um procedimento sistemático para identificação antecipada e resposta rápida para tendências importantes e eventos internos/externos à empresa. (tradução nossa)". \cite[p.134]{1980Ansoff}  Como ratificado em seu outro trabalho focado em gestão por questões, esta é uma tendência de desenvolvimento futuro, com efeitos internos/externos à organização e que impactam diretamente nos objetivos. \cite{1980Ansoff} 
+
+É importante ratificar que a busca pelos sinais fracos foi colocada em evidência por conta da dificuldade existente em manter um planejamento estratégico atual e seguindo o seu plano natural em meio a um ambiente de constantes mudanças e novas tendências. Manter um planejamento estratégico atualizado a cada momento em que se identifica um impacto exige um grande esforço da equipe responsável, expertise e maleabilidade estratégica que é incomum em uma gestão estratégica. Dessa forma, a gestão estratégica por meio de questões pressupõe uma gestão mais maleável, com visão inovativa. 
+
+Segundo \cite[p.134]{1980Ansoff} é possível identificar questões por meio de um processo a ser executado em tempo real, periodicamente, através de revisões e atualizações de uma "lista de questões estratégicas". Essas constantes revisões devem ser avaliadas com um olhar interno e externo à organização afim de observar qualquer tipo de novas questões que podem surgir. 
+
+\cite{2012FOI} [p.198] "In this paper, we suggest the use of techniques such as hyperlink analysis and natural language processing (including topic recognition and affect analysis) to map the existing dark web forums and to find out which forums and users that can be of interest for human analysts to take a closer look at. In order to combine the outputs from the various suggested methods, we propose using information fusion techniques implemented in FOI’s Impactorium fusion platform [22]."
+
+\cite{2012FOI} [p.199] "Since the amount of content on the Internet is enormous, it does not make sense to try to search for digital traces from potential lone wolf terrorist without any guidance. Therefore, it is necessary to limit the search and instead focus on a smaller subset of the Internet."
+
+\cite{2012FOI} [p.199] "The process of systematically collecting web pages is often referred to as crawling. Usually, the crawling process starts from a given source web page (the seeds described above) and follows the source page hyperlinks to find more web pages [13]."
+
+\cite{2012FOI} [p.202] "Social network analysis (SNA) [19], [24] could also be used to help in the identification of authors by computing structural similarities between different aliases. If two aliases post to the same forums, on the same topics, and regularly comment on the same type of posts, it is likely that they are in fact the same. It is also possible to use abstraction techniques such as simulation [5] to determine the likelihood with which two aliases are the same."
+
+\cite{2012FOI} [p.204] "It is important to highlight that the proposed system is not intended to be fully automatic."
+
+\cite{2013ClusterAnalysis} [p.70] "The quantitative assessment of risk in aviation safety is particularly challenging because serious deviation events are extremely rare and the causal factors are non-linearly related to events, which makes them difficult to quantify (Hadjimichael, 2009). However, air traffic is full of incidents and deviations that do not contain any hazard as such, but need to be investigated to find out potential lethal trends."
+
+\cite{2013ClusterAnalysis} [p.71] "Henrinch (2007) defines latent threats as risk increasing factors residing in the system, such as flawed procedures, defective communications, inspection shortcoming and oversight flaws. These latent threats often remain hidden threats until they are uncovered through the analysis of aggregate data, such as incident reports. Conventional tools and methods, like spread sheets and database queries on their own are insufficient when searching for these lethal trends, thus more sophisticated methods and tools are required. Data mining reveals patterns that can be described as a set of incidents with common
+characteristics (Kirwan, 2011)."
+
+\cite{2013ClusterAnalysis} [p.71] "Safety reports exist in the aviation industry as a result of collecting information from the large database of multiple sources"
+
+\cite{2013ClusterAnalysis} [p.71] "Text miningtools are already in use among the airline industry althought not very widely"
+
+\cite{2013ClusterAnalysis} [p.71] "The use of the tools is continuously being developed and Muir (2004) has stated the goal is an automated risk analysis system and the measurement of safety performance."
+
+\cite{2013ClusterAnalysis} [p.72] "The most widely used approach is to seek and detect latent errors that have led to adverse events by analysing incident reports. In addition, reports from medical malpractice claims, morbidity and mortality and autopsies are also analysed."
+
+\cite{2013ClusterAnalysis} [p.75] "The results of the flight safety reports confirmed the applicability of data mining for this kind of material, which consists of short reports written in Finnish"
+
+\cite{2013ClusterAnalysis} [p.76] "Using clustering as method, promising results in the identification of those events have been discovered among both of the contexts, the main focus of which is the discovering and identifying of weak signals in the documentation."
+
+\cite{2013ClusterAnalysis} [p.76] "Data mining does not give straight answers to the questions, but its role is purely a decision support system, although that often provides, indispensable supplementary information for the decision making processes"
+
+\cite{2013ClusterAnalysis} [p.76] "In the safety augmentation process, data mining can only be considered a speculative method in the search for lethal trends. In cases where the researchers and safety personnel know what they are looking for, business intelligence (BI) methods could be applicable as they allow the databases to be queried using numerous keywords to search for known cases of a certain type or their combinations"
+
+\chapter*{Conclusão}
+\addcontentsline{toc}{chapter}{Conclusão}
+
+\bibliography{bibliografia}
+
+\end{document}
