@@ -1,0 +1,4 @@
+IDEIAS E DISCUSSÕES
+
+- Talvez uma forma de detectar sinais fracos utilizando data science seria procurar graus de entropia de determinadas variáveis que determinam variáveis alvo; 
+- Será interessante ter um local para inserir informações (cadastro) de alguns eventos que são considerados interessantes de serem replicados em momentos futuros e buscar verificar as variáveis que podem ser determinantes para ele (assim quando as variáveis baterem em outros eventos parecidos, poderá ser um sinal de que aquele evento irá ocorrer);
