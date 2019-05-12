@@ -1,21 +1,21 @@
 \documentclass[12pt,openright,twoside,a4paper,
-    chapter=TITLE, % ti¥tulos de capi¥tulos convertidos em letras maiu¥sculas 
-    section=TITLE, % ti¥tulos de sec∏o~es convertidos em letras maiu¥sculas 
-    subsection=TITLE, % ti¥tulos de subsec∏o~es convertidos em letras maiu¥sculas 
-    subsubsection=TITLE, % ti¥tulos de subsubsec∏o~es em letras maiu¥sculas 
-    subsubsubsection=TITLE,% ti¥tulos de subsubsubsec∏o~es em letras maiu¥sculas
+    chapter=TITLE, % títulos de capítulos convertidos em letras maiúsculas 
+    section=TITLE, % títulos de seções convertidos em letras maiúsculas 
+    subsection=TITLE, % títulos de subseções convertidos em letras maiúsculas 
+    subsubsection=TITLE, % títulos de subsubseções em letras maiúsculas 
+    subsubsubsection=TITLE,% títulos de subsubsubseções em letras maiúsculas
     english,french,spanish,brazil]{abntex2}
 \setlength{\parindent}{1.3cm}
-\setlength{\parskip}{0.2cm} % tente tambe¥m \onelineskip
+\setlength{\parskip}{0.2cm} % tente também \onelineskip
 \setlength{\ABNTEXcitacaorecuo}{1.8cm}
 \setlrmarginsandblock{3cm}{2cm}{*}
 \setulmarginsandblock{3cm}{2cm}{*}
 \checkandfixthelayout
 \usepackage[utf8]{inputenc}
 \usepackage{indentfirst}
-\usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citaÁıes na bibl
-\usepackage[alf]{abntex2cite}				    % CitaÁıes padr„o ABNT (alfa)
-\usepackage{hyperref}  % controla a formac∏a~o do i¥ndice
+\usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}				    % Citações padrão ABNT (alfa)
+\usepackage{hyperref}  % controla a formação do índice
 
 % IMAGENS
 \usepackage{graphicx}
@@ -24,35 +24,37 @@
 \title{Sinais Fracos}
 \author{Rodrigo Teixeira dos Santos}
 \date{Maio/2019}
-\tipotrabalho{DissertaÁ„o de Mestrado}
-\instituicao{UCB - Universidade CatÛlica de BrasÌlia}
-%\localidade{BrasÌlia - DF}
+\tipotrabalho{Dissertação de Mestrado}
+\instituicao{UCB - Universidade Católica de Brasília}
+%\localidade{Brasília - DF}
 
 \begin{document}
 
 \maketitle
+\textual 
 
 %\pdfbookmark[0]{\contentsname}{toc}
 %\tableofcontents*
 
-%\chapter*{IntroduÁ„o}
-%\addcontentsline{toc}{chapter}{IntroduÁ„o}
+%\chapter*{Introdução}
+%\addcontentsline{toc}{chapter}{Introdução}
 
-\chapter{Embasamento TeÛrico}
+\chapter{Embasamento Teórico}
 
 \section{Sinais Fracos}
 
-%H· tempos tÈcnicas para buscar prever o futuro seduzem os seres humanos. Seja a previs„o de pequenas aÁıes, com fins de adquirir vantagens de pequeno porte, sejam aquelas avultosas, de grande porte, onde o resultado venha trazer grandes melhorias para uma pessoa especÌfica ou grupo de pessoas, bem como evitar que determinadas aÁıes tenham um fim divergente que o imaginado. O futuro, apesar de incerto, pode sim ser clarificado se utilizadas as ferramentas e tÈcnicas corretas, na forma correta. Um dos pioneiros na busca de respostas r·pidas para incidentes futuros È Igor H. Ansoff que buscou consolidar conceitos com o objetivo de prever e evitar surpresas estratÈgicas que nada mais s„o que eventos considerados ameaÁadores e n„o familiares confrontados por uma empresa \cite{1975Ansoff} [p.22].%
-Como colocado por \cite[p.32]{1975Ansoff} h· "uma inabilidade do planejamento estratÈgico em lidar rapidamente e com eficiÍncia oportunidades e/ou ameaÁas que s„o desenvolvidas inesperadamente (traduÁ„o nossa)", sendo que as razıes para isso s„o diversas, dentre elas encontra-se a "inflexibilidade organizacional do planejamento estratÈgico, o qual n„o pode lidar de forma efetiva com questıes que podem afetar de forma simult‚nea mais de uma unidade de planejamento (traduÁ„o nossa)".  \cite[p.32]{1975Ansoff} AlÈm dessas, s„o colocados mais dois fatores interessantes do porquÍ essa inabilidade existe, o primeiro È dificuldade que as empresas tem de manter uma revis„o anual do planejamento estratÈgico e todo o penoso processo que ele representa; em segundo lugar, a crescente incidÍncia de "questıes" as quais foram causadas por eventos que vieram de fontes n„o mapeadas pela empresa e que causam um impacto efetivo. \cite{1980Ansoff}
+%Há tempos técnicas para buscar prever o futuro seduzem os seres humanos. Seja a previsão de pequenas ações, com fins de adquirir vantagens de pequeno porte, sejam aquelas avultosas, de grande porte, onde o resultado venha trazer grandes melhorias para uma pessoa específica ou grupo de pessoas, bem como evitar que determinadas ações tenham um fim divergente que o imaginado. O futuro, apesar de incerto, pode sim ser clarificado se utilizadas as ferramentas e técnicas corretas, na forma correta. Um dos pioneiros na busca de respostas rápidas para incidentes futuros é Igor H. Ansoff que buscou consolidar conceitos com o objetivo de prever e evitar surpresas estratégicas que nada mais são que eventos considerados ameaçadores e não familiares confrontados por uma empresa \cite{1975Ansoff} [p.22].%
 
-Para se manter um alinhamento de entendimento, o termo "questıes" pode ser entendido como:
+Como colocado por \cite[p.32]{1975Ansoff} há "uma inabilidade do planejamento estratégico em lidar de forma rápida e eficiente com oportunidades e/ou ameaças que são desenvolvidas inesperadamente (tradução nossa)", sendo que as razões para isso são diversas, dentre elas encontra-se a "inflexibilidade organizacional do planejamento estratégico, o qual não pode lidar de forma efetiva com questões que podem afetar de forma simultânea mais de uma unidade de planejamento (tradução nossa)".  \cite[p.32]{1975Ansoff} Além dessas, são colocados mais dois fatores interessantes do porquê essa inabilidade existe, o primeiro é dificuldade que as empresas tem de manter uma revisão anual do planejamento estratégico e todo o penoso processo que ele representa; em segundo lugar, a crescente incidência de 'questões' as quais foram causadas por eventos que vieram de fontes não mapeadas pela empresa e que causam um impacto efetivo. \cite{1980Ansoff}
+
+Para se manter um alinhamento de entendimento, o termo 'questões' pode ser entendido como:
 \begin{quote}
-"A 'quest„o' pode ser bem-vinda, uma oportunidade a ser abraÁada no ambiente, ou uma forÁa interna (da organizaÁ„o), ou uma fraqueza interna (da organizaÁ„o), a qual coloca em risco a busca pelo sucesso, atÈ mesmo a sobrevivÍncia da organizaÁ„o (traduÁ„o nossa)" \cite{1980Ansoff}
+"A 'questão' pode ser bem-vinda, uma oportunidade a ser abraçada no ambiente, ou uma força interna (da organização), ou uma fraqueza interna (da organização), a qual coloca em risco a busca pelo sucesso, até mesmo a sobrevivência da organização (tradução nossa)" \cite{1980Ansoff}
 \end{quote}
 
-Empresas enfrentam um paradoxo no momento em que elas agem em resposta a uma possÌvel mudanÁa ambiental: aguardar ter mais informaÁıes sobre essa mudanÁa e agir contra uma possÌvel crise ou trabalhar em cima de informaÁıes vagas que n„o trazem solidez para o um plano estratÈgico? O autor sugere uma soluÁ„o para esse paradoxo que È o acompanhamento dessas informaÁıes durante os seus desenvolvimentos, dando as devidas atenÁıes nos momentos oportunos e, ao mesmo tempo, flexibilizando o planejamento estratÈgico de modo que possam agir assim que as informaÁıes passarem mais solidez para a empresa. Deste processo de trabalho surge o conceito de sinais fracos, ou seja, n„o aguardar para que um sinal esteja forte o suficiente para que a empresa haja, mas monitorar sinais de menor potencial a fim de atacar a oportunidade ou a ameaÁa o quanto antes. \cite[p.23]{1975Ansoff}
+Empresas enfrentam um paradoxo no momento em que elas agem em resposta a uma possível mudança ambiental: aguardar ter mais informações sobre essa mudança e agir contra uma possível crise ou trabalhar em cima de informações vagas que não trazem solidez para o um plano estratégico? O autor sugere uma solução para esse paradoxo que é o acompanhamento dessas informações durante os seus desenvolvimentos, dando as devidas atenções nos momentos oportunos e, ao mesmo tempo, flexibilizando o planejamento estratégico de modo que possam agir assim que as informações passarem mais solidez para a empresa. Deste processo de trabalho surge o conceito de sinais fracos, ou seja, não aguardar para que um sinal esteja forte o suficiente para que a empresa haja, mas monitorar sinais de menor potencial a fim de atacar a oportunidade ou a ameaça o quanto antes. \cite[p.23]{1975Ansoff}
 
-Portanto, quando uma ameaÁa/oportunidade È vislumbrada no futuro, ela precisa ser municiada constantemente com informaÁıes, mesmo que vagas, acerca dela, para que, de forma progressiva, ela seja desenvolvida ao longo do tempo. \cite[p.24]{1975Ansoff} afirma que "esse progresso È caracterizado por sucessivos estados de conhecimento (traduÁ„o nossa)".
+Portanto, quando uma ameaça/oportunidade é vislumbrada no futuro, ela precisa ser municiada constantemente com informações, mesmo que vagas, acerca dela, para que, de forma progressiva, ela seja desenvolvida ao longo do tempo. \cite[p.24]{1975Ansoff} afirma que "esse progresso é caracterizado por sucessivos estados de conhecimento (tradução nossa)".
 
 \begin{figure}[htb]
 \caption{\label{fig_circulo} States of Ignorance Under Discontinuity}
@@ -62,18 +64,41 @@ Portanto, quando uma ameaÁa/oportunidade È vislumbrada no futuro, ela precisa se
 \legend{Fonte: \cite{1975Ansoff}}
 \end{figure}
 
-A intenÁ„o È enfatizar que as informaÁıes, ao serem utilizadas para o planejamento estratÈgico, devem satisfazer duas condiÁıes: 
+A intenção é enfatizar que as informações, ao serem utilizadas para o planejamento estratégico, devem satisfazer duas condições: 
 \begin{quote}
-"Primeiro, precisam estar disponÌveis cedo o suficiente para que se tenha tempo para a preparaÁ„o de planos e programas (...). Segundo, se os planos e programas estratÈgicos s„o criados, o conte˙do  da previs„o precisa ser adequado para permitir que gestores estimem seus impactos na empresa, identificando respostas especÌficas e estimando o possÌvel impacto no lucro atrelado a essas respostas. (traduÁ„o nossa)". \cite{1975Ansoff}
+"Primeiro, precisam estar disponíveis cedo o suficiente para que se tenha tempo para a preparação de planos e programas (...). Segundo, se os planos e programas estratégicos são criados, o conteúdo  da previsão (que o planejamento estratégico tem a capacidade de produzir) precisa ser adequado para permitir que gestores estimem seus impactos na empresa, identificando respostas específicas e estimando o possível impacto no lucro atrelado a essas respostas. (tradução nossa)". \cite{1975Ansoff}
 \end{quote}
 
-Colocado assim, È sugerida a criaÁ„o do \textit{SIM}, Sistema de gest„o estratÈgica por questıes (\textit{Strategic issue management} em inglÍs), como sendo uma "expans„o e extens„o de uma analise estratÈgica por questıes, a qual tem emergido na pr·tica ao longo dos ˙ltimos anos (...) admitindo sinais fracos como base para a tomada de decis„o, e a extens„o era sair de um sistema de planejamento puro para um sistema de aÁ„o. (traduÁ„o nossa)". \cite{1975Ansoff} Em outras palavras, o \textit{SIM} È "um procedimento sistem·tico para identificaÁ„o antecipada e resposta r·pida para tendÍncias importantes e eventos internos/externos ‡ empresa. (traduÁ„o nossa)". \cite[p.134]{1980Ansoff}  Como ratificado em seu outro trabalho focado em gest„o por questıes, esta È uma tendÍncia de desenvolvimento futuro, com efeitos internos/externos ‡ organizaÁ„o e que impactam diretamente nos objetivos. \cite{1980Ansoff} 
+Colocado assim, é sugerida a criação do \textit{SIM}, Sistema de gestão de questões estratégicas (\textit{Strategic issue management} em inglês), como sendo uma "expansão e extensão de uma analise estratégica por questões, a qual tem emergido na prática ao longo dos últimos anos (...) admitindo sinais fracos como base para a tomada de decisão (...) e sair de um sistema de planejamento puro para um sistema de ação. (tradução nossa)". \cite{1975Ansoff} Em outras palavras, o \textit{SIM} é "um procedimento sistemático para identificação antecipada e resposta rápida para tendências importantes e eventos internos/externos à empresa. (tradução nossa)". \cite[p.134]{1980Ansoff}  Como ratificado em seu outro trabalho focado em gestão por questões, esta é uma tendência de desenvolvimento futuro, com efeitos internos/externos à organização e que impactam diretamente nos objetivos. \cite{1980Ansoff} 
 
-… importante ratificar que a busca pelos sinais fracos foi colocada em evidÍncia por conta da dificuldade existente em manter um planejamento estratÈgico atual e seguindo o seu plano natural em meio a um ambiente de constantes mudanÁas e novas tendÍncias. Manter um planejamento estratÈgico atualizado a cada momento em que se identifica um impacto exige um grande esforÁo da equipe respons·vel, expertise e maleabilidade estratÈgica que È incomum em uma gest„o estratÈgica. Dessa forma, a gest„o estratÈgica por meio de questıes pressupıe uma gest„o mais male·vel, com vis„o inovativa. 
+É importante ratificar que a busca pelos sinais fracos foi colocada em evidência por conta da dificuldade existente em manter um planejamento estratégico atual e seguindo o seu plano natural em meio a um ambiente de constantes mudanças e novas tendências. Manter um planejamento estratégico atualizado a cada momento em que se identifica um impacto exige um grande esforço da equipe responsável, expertise e maleabilidade estratégica que é incomum em uma planejamento estratégico periódico. Dessa forma, a gestão de questões estratégicas pressupõe uma gestão mais maleável, com visão de inovação. Porém, o que \cite{1980Ansoff} prega não é a utilização única e exclusiva do \textit{SIM} em detrimento do planejamento estratégico periódico, mas sim, que complemente a ele. O planejamento periódico é de extrema importância para identificar os reais objetivos de uma organização e buscar um alinhamento de necessidades estratégicas que permeie toda a sua extensão, ocorre que, ao longo do caminho da busca por esses objetivos, uma série de questões podem surgir e desviarem a organização desse alcance. É para esse fim que o \textit{SIM} deve mostrar as suas qualidades, promovendo uma avaliação rápida e com respostas rápidas fazendo com que a organização retome os trilhos e alcance o almejado.
 
-Segundo \cite[p.134]{1980Ansoff} È possÌvel identificar questıes por meio de um processo a ser executado em tempo real, periodicamente, atravÈs de revisıes e atualizaÁıes de uma "lista de questıes estratÈgicas". Essas constantes revisıes devem ser avaliadas com um olhar interno e externo ‡ organizaÁ„o afim de observar qualquer tipo de novas questıes que podem surgir. 
+Segundo \cite[p.134]{1980Ansoff} é possível identificar questões por meio de um processo a ser executado em tempo real, periodicamente, através de revisões e atualizações de uma "lista de questões estratégicas". Essas constantes revisões devem ser avaliadas com um olhar interno e externo à organização afim de observar qualquer tipo de novas questões que podem surgir. Responder a essas questões de forma rápida é necessário e pode ser feito de várias formas que, se feitas complementarmente, potencializam um bom resultado. É interessante, portanto, que se tenha uma equipe de profissionais com grande experiência e autoridade suficiente para que possa controlar recursos a serem usados a seu favor. Como colocado anteriormente, o \textit{SIM} possui características de inovação, o que necessita de ações executadas com uma velocidade a qual um ambiente burocrático e verticalizado não oferece, necessitando, algumas vezes, que essa hierarquia seja 'burlada' para que o resultado seja mais efetivo. Isso significa colocar a equipe de resposta tratando diretamente com gestores de alto grau na organização. Como o \textit{SIM} é um sistema de gestão voltado para a ação, o grupo deve estar pronto e com 'carta branca' para executar o que for possível para resolver a questão levantada.
 
-\cite{2012FOI} [p.198] "In this paper, we suggest the use of techniques such as hyperlink analysis and natural language processing (including topic recognition and affect analysis) to map the existing dark web forums and to find out which forums and users that can be of interest for human analysts to take a closer look at. In order to combine the outputs from the various suggested methods, we propose using information fusion techniques implemented in FOIís Impactorium fusion platform [22]."
+Para deixar mais claro o grau de importância que o \textit{SIM} possui, ele tem a prerrogativa de, por meio de seus componentes, criar projetos provindos de questões que, após identificação, poderiam ser melhor tratados por alguma área específica da organização ou, quando isso não ocorre, a equipe pode envolver nesse projeto aqueles que considerarem os principais afetados e aqueles que considerarem com maior qualidade para tratar da questão envolvida. \cite[p.135]{1980Ansoff}
+
+\begin{figure}[htb]
+\caption{\label{fig_circulo} Responsibilities for strategic issue management}
+\begin{center}
+\includegraphics[scale=0.23]{1980_ansoff_responsibilities_strategic_issue_management.jpg}
+\end{center}
+\legend{Fonte: \cite{1980Ansoff}}
+\end{figure}
+
+\section{Wild cards e os sinais fracos}
+
+\cite{2004Mendonca} também faz referência ao trabalho de \cite{1975Ansoff} ao sugerir uma forma de resposta rápida a 'sinais fracos' provindos do ambiente (interno/externo). Chamado de 'sistema de gerenciamento de \textit{wild cards}', é também usado para ambientes altamente voláteis e se baseia em dois componentes, sinais fracos e a improvisação da organização.
+
+De acordo com \cite[p.5]{2004Mendonca}, \textit{wild cards} são incidentes com perceptível baixa probabilidade de ocorrência e impactos potenciais altíssimos, sendo este o que menos se espera que ocorra, mas com maior potencial de mudança (pode-se colocar como sementes de mudança os '\textit{wild cards}', ciclos, questões emergentes e tendências gerais).
+
+Cabe aqui reorientar que apesar do trabalho parecido contendo sinais fracos como um de seus componentes, existem diferenças visíveis entre os eventos mapeados como \textit{wild cards} e as 'questões' colocadas anteriormente por \cite{1975Ansoff}. Ambos buscam sinais fracos como formas de diminuir ou potencializar as suas incidências, porém o grau de desorientação possível de ser deixado pelo primeiro é bem mais intenso que o último, bem como o tempo para uma reorganização.
+
+De acordo com \cite[p.7]{2004Mendonca}, ao citar (Peterson, 1999), menciona 3 perguntas que devem ser feitas a respeito de \textit{wild cards} durante o desenvolvimento de um planejamento estratégico que, se respondidas, ajudam evitar surpresas: 1) quais são os \textit{wild cards} mais importantes para a organização? 2) podemos antecipar a chegada deles? 3) existe alguma coisa que possamos fazer sobre eles?
+\cite[p.7]{2004Mendonca} prossegue informando que as perguntas ajudam na preparação de uma forma de resposta aos incertos eventos futuros, porém o grande desafio é desenvolver uma forma de previsão desses acontecimentos futuros que fosse possível, não somente traçar possibilidades de abordagem, mas debater e aprendendo a respeito do evento futuro. Por fim, o grande ganho envolvendo a implantação desse sistema é a busca de antecipação de ações acerca do evento, evitando que se perca tempo com a resposta durante uma crise instaurada pela sua chegada. Por fim, \cite{2004Mendonca} salienta que o fato da companhia não conseguir gerir os \textit{wild cards} de forma correta, ensejará no risco de ter que responder cumuladamente a questões com alto teor disruptivo de forma rápida, exigindo muito comprometimento da alta gestão.
+
+XXXX citações soltas XXXX
+
+\cite{2012FOI} [p.198] "In this paper, we suggest the use of techniques such as hyperlink analysis and natural language processing (including topic recognition and affect analysis) to map the existing dark web forums and to find out which forums and users that can be of interest for human analysts to take a closer look at. In order to combine the outputs from the various suggested methods, we propose using information fusion techniques implemented in FOI’s Impactorium fusion platform [22]."
 
 \cite{2012FOI} [p.199] "Since the amount of content on the Internet is enormous, it does not make sense to try to search for digital traces from potential lone wolf terrorist without any guidance. Therefore, it is necessary to limit the search and instead focus on a smaller subset of the Internet."
 
@@ -104,8 +129,8 @@ characteristics (Kirwan, 2011)."
 
 \cite{2013ClusterAnalysis} [p.76] "In the safety augmentation process, data mining can only be considered a speculative method in the search for lethal trends. In cases where the researchers and safety personnel know what they are looking for, business intelligence (BI) methods could be applicable as they allow the databases to be queried using numerous keywords to search for known cases of a certain type or their combinations"
 
-\chapter*{Conclus„o}
-\addcontentsline{toc}{chapter}{Conclus„o}
+\chapter*{Conclusão}
+\addcontentsline{toc}{chapter}{Conclusão}
 
 \bibliography{bibliografia}
 
