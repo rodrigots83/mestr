@@ -1,0 +1,4 @@
+label	replace by
+ansoff, h.i.	ansoff, i.h.
+ansoff, i.	ansoff, i.h.
+schoemaker, p.	schoemaker, p.j.h.
