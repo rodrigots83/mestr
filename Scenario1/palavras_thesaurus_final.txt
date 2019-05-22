@@ -24,3 +24,4 @@ weak signals	weak signal
 weak signal detecting	weak signal detection
 weak signals detection	weak signal detection
 weak-signal detection	weak signal detection
+detection of weak signal	weak signal detection
