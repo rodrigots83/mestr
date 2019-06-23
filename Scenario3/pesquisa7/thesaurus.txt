@@ -1,0 +1,18 @@
+label	replace by
+decision-making	decision making
+delphi	delphi method
+delphi survey	delphi method
+emerging technologies	emerging technology
+forecasting	forecast
+futures	future
+futures studies	future studies
+global challenges	global change
+globalisation	globalization
+innovations	innovation
+innovation systems	innovation system
+modelling	modeling
+policy-making	policy making
+roadmapping	roadmap
+scenarios	scenario
+technological forecasting	technology forecasting
+technological foresight	technology foresight
