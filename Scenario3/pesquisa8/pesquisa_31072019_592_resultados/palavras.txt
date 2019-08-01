@@ -1,0 +1,330 @@
+label	
+adaptation	n
+africa	n
+agent-based modeling	n 
+aging	n
+agriculture	n
+alternative futures	
+alzheimer's disease	n
+anthropocene	n
+anticipation	
+anticipatory governance	
+artificial intelligence	
+assessment	
+australia	n
+autobiographical memory	n
+backcasting	n
+bibliometric analysis	n
+bibliometrics	n
+big data	
+bioeconomy	n
+biotechnology	n
+bounded rationality	n
+brazil	n
+business models	
+case study	
+causal layered analysis	
+cerebral oximetry	n
+change management	
+children	n
+china	n
+cities	n
+climate change	n
+climate engineering	n
+co-creation	
+cognition	
+cognitive biases	
+collaboration	
+communication	
+competitive intelligence	
+competitiveness	
+complex systems	
+complexity	
+complexity theory	
+conflict	
+consumption	
+convergence	
+corporate foresight	
+creativity	
+crisis	
+critical technologies	
+crowdsourcing	
+culture	
+curriculum	
+data analytics	
+data mining	
+decision making	
+decision-making	
+delphi	
+delphi method	
+delphi survey	
+design	
+design fiction	
+developing country	
+development	
+digitalization	
+dynamic capabilities	
+dynamic programming	
+e-government	
+economic crisis	
+economic development	n
+economic growth	n
+economics	n
+economy	n
+ecosystem	n
+ecosystem services	n
+education	n
+efficiency	n
+electricity market	n
+emergence	n
+emerging technologies	
+emerging technology	
+emotion	n
+energy	n
+energy storage	n
+entrepreneurship	n
+environment	
+environmental management	
+environmental scanning	
+environmental uncertainty	
+episodic foresight	
+episodic future thinking	
+episodic memory	
+epistemology	
+equilibrium selection	
+ethics	n
+europe	n
+european union	n
+evaluation	
+evolution	
+executive functions	
+experiential futures	
+finland	
+fmri	
+food	
+food safety	
+food security	
+food systems	
+forecast	
+forecasting	
+foresight	
+foresight analysis	
+foresight evaluation	
+foresight methodology	
+foresight methods	
+foresight process	
+foresight research	
+foresight studies	
+foresight support systems	
+foresight technology	
+forward planning	
+framework	
+france	
+future	
+future orientation	
+future scenarios	
+future studies	
+future thinking	
+future-oriented technology analysis	
+futures	
+futures literacy	
+futures research	
+futures studies	
+game theory	
+general equilibrium	
+global challenges	
+global change	
+global studies	
+globalisation	
+globalization	
+governance	
+grand challenges	
+health	
+higher education	
+hindsight	
+hindsight bias	
+history	
+horizon scanning	
+human capital	
+ict	
+impact	
+impact assessment	
+impulsivity	
+industry 4.0	
+information society	
+infrastructure	
+innovation	
+innovation management	
+innovation policy	
+innovation system	
+innovation systems	
+innovations	
+integral futures	
+integration	
+intelligence	
+intention	
+interdisciplinary	
+iran	
+knowledge	
+knowledge management	
+land use	
+leadership	
+learning	
+limited foresight	
+livestock	
+machine learning	
+malaysia	
+management	
+manufacturing	
+manufacturing and processing	
+market	
+measurement	
+megatrends	
+memory	
+mental time travel	
+meta-analysis	
+methodology	
+methods	
+mining	
+model	
+modeling	
+modelling	
+monitoring	
+motivation	
+nanotechnology	
+narrative	
+national innovation system	
+near-infrared spectroscopy	
+network analysis	
+networking	
+networks	
+nutrition	
+olg model	
+ontology	
+open foresight	
+open innovation	
+optimization	
+organizational learning	
+outcomes	
+participation	
+participatory foresight	
+patent analysis	
+patents	
+perfect foresight	
+performance	
+philosophy	
+planning	
+plans	
+plausibility	
+poland	
+policy	
+policy making	
+policy-making	
+policymaking	
+politics	
+poverty	
+prediction	
+priority setting	
+project management	
+prospection	
+prospective	
+public health	
+public participation	
+public policy	
+qualitative research	
+r&d	
+radical innovation	
+rational expectations	
+regional foresight	
+renewable energy	
+research	
+research and development	
+resilience	
+responsible research and innovation	
+review	
+risk	
+risk analysis	
+risk assessment	
+risk management	
+roadmap	
+roadmapping	
+robotics	
+russia	
+safety	
+scenario	
+scenario analysis	
+scenario building	
+scenario development	
+scenario method	
+scenario planning	
+scenarios	
+scene construction	
+science	
+science and technology	
+security	
+services	
+simulation	
+smart grids	
+social change	
+social learning	
+social media	
+social networks	
+society	
+south africa	
+stability	
+stakeholders	
+storage	
+strategic decision making	
+strategic foresight	
+strategic intelligence	
+strategic management	
+strategic planning	
+strategy	
+student needs	
+supply chain	
+supply chain management	
+survey	
+sustainability	
+sustainable development	
+system dynamics	
+systems thinking	
+technological change	
+technological forecasting	
+technological foresight	
+technology	
+technology analysis	
+technology assessment	
+technology forecasting	
+technology foresight	
+technology led strategy	
+technology management	
+technology policy	
+technology roadmap	
+technology roadmapping	
+territorial foresight	
+terrorism	
+text mining	
+the netherlands	
+theory of mind	
+time	
+tourism	
+trade	
+transformation	
+transition	
+transition management	
+trend analysis	
+trends	
+turkey	
+uk	
+uncertainty	
+uncertainty management	
+united kingdom	
+urban planning	
+vision	
+visioning	
+visions	
+water	
+water management	
+weak signals	
+wild cards	
+workshop	
