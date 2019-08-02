@@ -1,0 +1,30 @@
+big data
+climate change
+competitive intelligence
+corporate foresight
+data mining
+decisio-making
+early detection
+early warning
+early warning system
+energy detection
+environmental scanning
+foresight
+future sign
+horizon scanning
+innovation
+machine learning
+scenario planning
+scenarios
+security
+signal analysis
+social networks
+text mining
+time series
+uncertainty
+weak signals
+weak signals detection
+wild cards
+
+"TITLE-ABS-KEY(""weak signals"" and ("" big data "" or ""climate change"" or ""competitive intelligence"" or ""corporate foresight"" or ""data mining"" or ""decision-making"" or ""decision making"" or ""early detection"" or ""early warning"" or ""early warning system"" or ""energy detection"" or ""environmental scanning"" or ""foresight"" or ""future sign"" or ""horizon scanning"" or ""innovation"" or ""machine learning"" or ""scenario planning"" or ""scenarios"" or ""security"" or ""signal analysis"" or ""social networks"" or ""text mining"" or ""time series"" or ""uncertainty"" or ""weak signals detection"" or ""wild cards""))"
+"TITLE-ABS-KEY(""weak signals"" and ("" big data "" or ""climate change"" or ""competitive intelligence"" or ""corporate foresight"" or ""data mining"" or ""decision-making"" or ""decision making"" or ""early detection"" or ""early warning"" or ""early warning system"" or ""environmental scanning"" or ""foresight"" or ""future sign"" or ""horizon scanning"" or ""innovation"" or ""machine learning"" or ""scenario planning"" or ""scenarios"" or ""signal analysis"" or ""social networks"" or ""text mining"" or ""uncertainty"" or ""weak signals detection"" or ""wild cards""))"
