@@ -1,0 +1,3 @@
+label	replace by
+weak signal	weak signals
+weak-signal detection	weak signals detection

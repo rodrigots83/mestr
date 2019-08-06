@@ -3,13 +3,14 @@ climate change
 competitive intelligence
 corporate foresight
 data mining
-decisio-making
+decision-making
+development 
 early detection
 early warning
 early warning system
-energy detection
 environmental scanning
 foresight
+future 
 future sign
 horizon scanning
 innovation
@@ -23,8 +24,10 @@ text mining
 time series
 uncertainty
 weak signals
-weak signals detection
+weak signals detection 
 wild cards
 
-"TITLE-ABS-KEY(""weak signals"" and ("" big data "" or ""climate change"" or ""competitive intelligence"" or ""corporate foresight"" or ""data mining"" or ""decision-making"" or ""decision making"" or ""early detection"" or ""early warning"" or ""early warning system"" or ""energy detection"" or ""environmental scanning"" or ""foresight"" or ""future sign"" or ""horizon scanning"" or ""innovation"" or ""machine learning"" or ""scenario planning"" or ""scenarios"" or ""security"" or ""signal analysis"" or ""social networks"" or ""text mining"" or ""time series"" or ""uncertainty"" or ""weak signals detection"" or ""wild cards""))"
-"TITLE-ABS-KEY(""weak signals"" and ("" big data "" or ""climate change"" or ""competitive intelligence"" or ""corporate foresight"" or ""data mining"" or ""decision-making"" or ""decision making"" or ""early detection"" or ""early warning"" or ""early warning system"" or ""environmental scanning"" or ""foresight"" or ""future sign"" or ""horizon scanning"" or ""innovation"" or ""machine learning"" or ""scenario planning"" or ""scenarios"" or ""signal analysis"" or ""social networks"" or ""text mining"" or ""uncertainty"" or ""weak signals detection"" or ""wild cards""))"
+TITLE-ABS-KEY ( "weak signals"  AND  ( " big data "  OR  "climate change"  OR  "competitive intelligence"  OR  "corporate foresight"  OR  "data mining"  OR  "decision-making"  OR  "decision making"  OR  "development"  OR  "early detection"  OR  "early warning"  OR  "early warning system"  OR  "environmental scanning"  OR  "foresight"  OR  "future"  OR  "future sign"  OR  "horizon scanning"  OR  "innovation"  OR  "machine learning"  OR  "scenario planning"  OR  "scenarios"  OR  "security"  OR  "signal analysis"  OR  "social networks"  OR  "text mining"  OR  "time series"  OR  "uncertainty"  OR  "weak signals detection"  OR  "wild cards" )  AND NOT  ( "stochastic resonance"  OR  "signal detection"  OR  "duffing oscillator"  OR  "noise"  OR  "snr"  OR  "lock-in amplifier"  OR  "gps"  OR  "gnss"  OR  "aquisition"  OR  "fpga"  OR  "fft" ) )  AND  PUBYEAR  >  2008 
+
+
+Adicionando palavras-chave que não tem referencia com o objetivo da pesquisa. Ao observar o resultado do VOSViewer, fica bem claro que existe um "corte" entre o objetivo da pesquisa (no lado direito) e o que não é objetivo da pesquisa ao lado esquerdo. As palavras que foram colocadas na condição AND NOT estão do lado esquerdo. Para verificar o VOSViewer basta pegar os resultados de 1 a 6 e jogar na plataforma retirando as palavras-chave "weak signal" e "weak signal detection".
