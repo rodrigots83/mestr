@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568550611315.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "37BACAF4",
+    "lastKnownWriteTime" : 1568861420,
+    "last_content_update" : 1568861829201,
+    "path" : "~/Documents/projeto/NuvemPalavras/MostrarNuvemPalavras.R",
+    "project_path" : "MostrarNuvemPalavras.R",
+    "properties" : {
+        "cursorPosition" : "147,0",
+        "scrollLine" : "12",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

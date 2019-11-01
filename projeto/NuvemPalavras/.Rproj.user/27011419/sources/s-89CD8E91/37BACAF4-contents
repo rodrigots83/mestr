@@ -1,0 +1,147 @@
+
+#install.packages("bit64")
+#install.packages("magrittr")
+#install.packages("tm")
+#install.packages("wordcloud")
+#install.packages("stopwords")
+#install.packages("removeWords")
+#install.packages("data.frame")
+
+#available.packages()
+
+
+library(data.table)
+library(bit64)
+library(magrittr)
+library(wordcloud)
+
+# Parte referente à disruptions
+dados = read.csv(file = "Disruptions_pesquisa.csv", header = FALSE, sep = ";", stringsAsFactors = FALSE, encoding = "UTF-8")
+
+# Parte referente à trends
+# dados = read.csv(file = "Trends_pesquisa.csv", header = FALSE, sep = ";", stringsAsFactors = FALSE, encoding = "UTF-8")
+
+# View(dados[, dados[1,] %like% "migrationss"])
+
+for(i in 1:length(dados[1,])){
+  dados[1,i] <- tm::removePunctuation(x = dados[1,i])
+}
+
+dadosLista <- as.list(tolower(dados[1,]))
+
+# dadosLista
+
+###Palavras que precisam ser escritas juntas
+dadosLista = gsub(' ai ', ' artificial_intelligence ', dadosLista)
+dadosLista = gsub('artificial intelligence', 'artificial_intelligence', dadosLista)
+dadosLista = gsub('south america', 'south_america', dadosLista)
+dadosLista = gsub('south american', 'south_america', dadosLista)
+dadosLista = gsub('latin america', 'latin_america', dadosLista)
+dadosLista = gsub('latin american', 'latin_america', dadosLista)
+dadosLista = gsub('climate change', 'climate_change', dadosLista)
+dadosLista = gsub('financial crises', 'financial_crises', dadosLista)
+dadosLista = gsub('middle east', 'middle_east', dadosLista)
+dadosLista = gsub('cold war', 'cold_war', dadosLista)
+dadosLista = gsub('circular economy', 'circular_economy', dadosLista)
+dadosLista = gsub('developed countries', 'developed_countries', dadosLista)
+dadosLista = gsub('citizen participation', 'citizen_participation', dadosLista)
+dadosLista = gsub('social media', 'social_media', dadosLista)
+
+### Remoção de stopwords em inglês
+sentencas <- tm::removeWords(x = tolower(dadosLista),  words = stopwords::stopwords("en"))
+
+### Remoção de palavras que não fazem sentido para o trabalho
+sentencas <- tm::removeWords(x = tolower(sentencas),  words = c('different', 'due', 'increase', 'issues', 'international', 
+                                                                'leading', 'major', 'model', 'movements', 'possibility', 
+                                                                'replacing', 'role', 'support', 'union', 'use', 'varios', 
+                                                                'various', 'continente', 'life', 'movements', 'alternative', 
+                                                                'areas', 'can', 'citizen', 'control', 'countries','debate', 
+                                                                'division', 'end', 'events', 'flows', 'forms', 'greater',
+                                                                'influence', 'less', 'level', 'levels', 'may', 'movement', 
+                                                                'must', 'needs', 'new', 'occurrence', 'people', 'population', 
+                                                                'possible', 'regarding', 'relations', 'relationship', 'research', 
+                                                                'result', 'rise', 'sector', 'several', 'strong', 'time', 'will', 
+                                                                'without', 'world', 'years', 'companies', 'consequences', 
+                                                                'creation', 'down', 'drinking', 'demand', 'extreme', 'groups', 
+                                                                'high', 'human', 'impact', 'industrial', 'industry', 'importance', 
+                                                                'pressure', 'problems', 'quality', 'solution', 'strategic', 
+                                                                'strengh', 'search', 'weakening', 'resulting', 'lives', 
+                                                                'exploration', 'production', 'local', 'national', 'continent', 
+                                                                'access', 'importance', 'search', 'investment', 'systems'))
+
+### Criando as espécie de dicionário com todas as palavras.
+sentencas <- tibble(line = 1:length(sentencas), text = sentencas) %>% unnest_tokens(word, text)
+
+### Transforma em vetor para ficar mais leve para manipular as strings
+palavras <- as.vector(sentencas$word)
+
+##### Thesaurus
+##### Palavras diferentes com o mesmo significado, devem ser alteradas para manter esse significado.
+palavras[grep("agricultural", palavras)] <- 'food'
+palavras[grep("agriculture", palavras)] <- 'food'
+palavras[grep("brazil", palavras)] <- 'brasil'
+palavras[grep("brazilian", palavras)] <- 'brasil'
+palavras[grep("brasilian", palavras)] <- 'brasil'
+palavras[grep("democratic", palavras)] <- 'democracy'
+palavras[grep("developing", palavras)] <- 'development'
+palavras[grep("disruption", palavras)] <- 'disruption'
+palavras[grep("disruptions", palavras)] <- 'disruption'
+palavras[grep("ruptures", palavras)] <- 'disruption'
+palavras[grep("rupture", palavras)] <- 'disruption'
+palavras[grep("disruptiondown", palavras)] <- 'disruption'
+palavras[grep("ecomonic", palavras)] <- 'economy'
+palavras[grep("economics", palavras)] <- 'ecomony'
+palavras[grep("environmental", palavras)] <- 'environment'
+palavras[grep("fuel", palavras)] <- 'oil'
+palavras[grep("fossil", palavras)] <- 'oil'
+palavras[grep("government", palavras)] <- 'governments'
+palavras[grep("states", palavras)] <- 'governments'
+palavras[grep("growth", palavras)] <- 'increased'
+palavras[grep("increasing", palavras)] <- 'increased'
+palavras[grep("incresingly", palavras)] <- 'increased'
+palavras[grep("intensification", palavras)] <- 'increased'
+palavras[grep("increasedly", palavras)] <- 'increased'
+palavras[grep("rising", palavras)] <- 'increased'
+palavras[grep("growing", palavras)] <- 'increased'
+palavras[grep("political", palavras)] <- 'policies'
+palavras[grep("politics", palavras)] <- 'policies'
+palavras[grep("public", palavras)] <- 'policies'
+palavras[grep("politics", palavras)] <- 'policies'
+palavras[grep("natural", palavras)] <- 'nature'
+palavras[grep("migrations", palavras)] <- 'migration'
+palavras[grep("community", palavras)] <- 'society'
+palavras[grep("social", palavras)] <- 'society'
+palavras[grep("informational", palavras)] <- 'information'
+palavras[grep("energy matrix", palavras)] <- 'matrix'
+palavras[grep("energy model", palavras)] <- 'matrix'
+palavras[grep("tecnological", palavras)] <- 'technologies'
+palavras[grep("technological", palavras)] <- 'technologies'
+palavras[grep("technology", palavras)] <- 'technologies'
+palavras[grep("migratory", palavras)] <- 'migration'
+palavras[grep("wars", palavras)] <- 'war'
+palavras[grep("chineses", palavras)] <- 'china'
+palavras[grep("chinese", palavras)] <- 'china'
+palavras[grep("chinas", palavras)] <- 'china'
+palavras[grep("powers", palavras)] <- 'power'
+palavras[grep("break", palavras)] <- 'disruption'
+palavras[grep("african", palavras)] <- 'africa'
+palavras[grep("conflicts", palavras)] <- 'conflict'
+palavras[grep("democracies", palavras)] <- 'democracy'
+palavras[grep("european", palavras)] <- 'europe'
+palavras[grep("investiment", palavras)] <- 'investiments'
+palavras[grep("resource", palavras)] <- 'resources'
+palavras[grep("armed", palavras)] <- 'weapons'
+palavras[grep("work", palavras)] <- 'jobs'
+palavras[grep("job", palavras)] <- 'jobs'
+palavras[grep("job", palavras)] <- 'jobs'
+palavras[grep("labor", palavras)] <- 'jobs'
+palavras[grep("managements", palavras)] <- 'management'
+
+# View(palavras)
+
+# print(resultado)
+
+### Monta a nuvem de palavras
+pal2 = brewer.pal(8, 'Dark2')
+
+wordcloud(words = palavras, scale = c(4,.5), min.freq = 3, max.words = 5000, random.order = FALSE, random.color = FALSE, colors = pal2, )

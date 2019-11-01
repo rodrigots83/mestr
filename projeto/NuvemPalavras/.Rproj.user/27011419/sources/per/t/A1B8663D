@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568549265414.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A1B8663D",
+    "lastKnownWriteTime" : 8589869056,
+    "last_content_update" : 1568549265414,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "2F21456E",
+        "caption" : "sentencas",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=sentencas&cache_key=2F21456E",
+        "displayedObservations" : 2134,
+        "environment" : "",
+        "object" : "sentencas",
+        "preview" : 0,
+        "totalObservations" : 2134,
+        "variables" : 2
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,131 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+Estrutura do artigo a ser escrito ao final do curso de machine leaning:
+
+Abstract
+
+Introdução
+  - Vender o artigo (motivar, falar sobre a relevância, convencer)
+  - Sintética ou Autocontida
+  - Sintética é aquela pequena que vai direto ao ponto e normalente tem 2 a 3 páginas.
+  - Autocontida é aquela mais longa que normalmente tem mais de 5 páginas. Fala um pouco de tudo que contém no artigo.
+  
+Revisão bibliográfica
+  - 1 parágrafo, 1 tópico e ao fim, um "fecho".
+  
+Dados
+  - descrever sua base de dados;
+  - descrição, método de coleta;
+  - análise exploratória de dados (mostrar os dados para o leitor atraves de tabelas, gráficos, mapas, prints, etc);
+
+Metodologia
+  - qual o paradigma você está utilizando (supervisionado, nmão supervisionado e semi-supervisionado);
+  - especificar o algoritimo que será utilizado;
+
+Resultados
+  - Discussão - Mostrar resultados das performances dos diferentes algoritimos;
+  
+Conclusões 
+
+Referencias
+
+
+---
+
+Aqui começa um estudo sobre as aulas que do professor
+
+```{r message=FALSE}
+library(ggplot2)
+library(data.table)
+library(stargazer)
+library(skimr)
+
+credit = fread("data/German_credit_processed.csv")
+head(credit)
+str(credit)
+
+stargazer(credit, type = "text")
+skim(credit) %>% kable()
+
+credit$bad_credit = as.factor(credit$bad_credit)
+table(credit$bad_credit)
+```
+
+Criação de boxplots
+
+Um box plot
+
+```{r out.width="60%", fig.align='center'}
+
+#Utilizando somente uma variável
+ggplot(data = credit, aes(bad_credit, age_yrs)) + 
+  geom_boxplot() + 
+  labs(title = "Box plot", 
+         subtitle = "Idade vs Tipo de Crédito", 
+         caption = "Fonte: German Credit Processed", 
+         x = "Tipo de Crédito", 
+         y = "Idade") +
+  theme_bw()
+```
+
+Vários box plots (com várias variáveis do banco de dados)
+
+```{r out.width="60%", fig.align='center'}
+# Função para criação de um boxplot
+box_plot = function(data, atributos, variavelDependente = 'bad_credit'){
+  for (atributo in atributos) {
+    result = ggplot(data = data, aes_string(variavelDependente, atributo)) + 
+              geom_boxplot() +
+              labs(x = variavelDependente, 
+                   y = atributo,
+                   caption = "Créditos") +
+              theme_bw()
+    print(result)
+  }
+}
+
+box_plot(credit, c('loan_duration_mo', 'loan_amount', 
+                         'payment_pcnt_income', 'age_yrs', 
+                         'number_loans', 'dependents'))
+```
+
+Criação de violins (grafico)
+
+```{r out.width="60%", fig.align='center'}
+ggplot(credit, aes(bad_credit, dependents)) +
+  geom_violin() +
+  labs(title = "Violin",
+       subtitle = "Tipo de crédito vs Dependentes",
+       x = "Tipo de Crédito",
+       y = "Dependentes",
+       caption = "Créditos:") +
+  theme_dark()
+```
+
+Vários graficos de Violin (com várias variáveis do banco de dados)
+
+```{r out.width="60%", fig.align='center'}
+violin_plot = function(data, atributos, atributoDependente = 'bad_credit'){
+  for (atributo in atributos) {
+    result = ggplot(data = data, aes_string(atributoDependente, atributo)) +
+              geom_violin() +
+              theme_dark() +
+              labs(title = "Gráfico do tipo Violin",
+                   subtitle = "",
+                   x = atributoDependente,
+                   y = atributo,
+                   caption = "Créditos:")
+                  
+    print(result)
+  }
+}
+
+violin_plot(credit, c('loan_duration_mo', 'loan_amount', 
+                         'payment_pcnt_income', 'age_yrs', 
+                         'number_loans', 'dependents'))
+```

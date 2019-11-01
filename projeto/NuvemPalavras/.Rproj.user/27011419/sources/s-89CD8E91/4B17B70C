@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568550608533.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4B17B70C",
+    "lastKnownWriteTime" : 1568551603,
+    "last_content_update" : 1568551603504,
+    "path" : "~/Documents/projeto/NuvemPalavras/Summarization.R",
+    "project_path" : "Summarization.R",
+    "properties" : {
+        "cursorPosition" : "64,0",
+        "scrollLine" : "35",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

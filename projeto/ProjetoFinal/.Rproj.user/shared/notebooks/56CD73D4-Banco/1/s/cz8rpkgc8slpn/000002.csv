@@ -1,0 +1,7 @@
+"0","control <- trainControl(method = ""repeatedcv"", #boot, cv, LOOCV, timeslice OR adaptive etc."
+"0","                        number = 10,"
+"0","                        repeats = 20,"
+"0","                        classProbs = TRUE,"
+"0","                        summaryFunction = twoClassSummary,"
+"0","                        savePredictions = ""final"","
+"0","                        allowParallel = TRUE)"

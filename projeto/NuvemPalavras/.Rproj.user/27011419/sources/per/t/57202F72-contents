@@ -1,0 +1,67 @@
+
+#install.packages("bit64")
+#install.packages("magrittr")
+#install.packages("tm")
+#install.packages("wordcloud")
+#install.packages("stopwords")
+#install.packages("removeWords")
+#install.packages("data.frame")
+
+#available.packages()
+
+
+library(data.table)
+library(bit64)
+library(magrittr)
+library(wordcloud)
+
+# Parte referente à disruptions
+# dados = read.csv(file = "Disruptions_pesquisa.csv", header = FALSE, sep = ";", stringsAsFactors = FALSE, encoding = "UTF-8")
+
+# Parte referente à trends
+dados = read.csv(file = "Trends_pesquisa.csv", header = FALSE, sep = ";", stringsAsFactors = FALSE, encoding = "UTF-8")
+
+#View(dados)
+
+palavras <- as.vector(dados[1,])
+
+resultado <- ""
+
+for(i in 1:length(dados)){
+  final = tm::removeWords(x = tolower(dados[1,i]),  words = stopwords::stopwords("en"))
+  final = tm::removeWords(x = tolower(dados[1,i]),  words = stopwords::stopwords("pt"))
+  
+  ## Essa parte é para a pesquisa de Disruptions
+  final = tm::removeWords(x = tolower(dados[1,i]),  words = c('different', 'due', 'increase', 'issues', 'international', 'leading', 'major', 'model', 'movements', 'possibility', 'replacing', 'role', 'support', 'union', 'use', 'varios', 'various', 'continente', 'life', 'movements'))
+  final = tm::removePunctuation(x = final)
+
+  final = gsub(' ai ', 'artificial_intelligence', final)
+  final = gsub('artificial intelligence', 'artificial_intelligence', final)
+  final = gsub('south america', 'south_america', final)
+  final = gsub('south american', 'south_america', final)
+  final = gsub('latin america', 'latin_america', final)
+  final = gsub('latin american', 'latin_america', final)
+  final = gsub('climate change', 'climate_change', final)
+  final = gsub('financial crises', 'financial_crises', final)
+  final = gsub('middle east', 'middle_east', final)
+  final = gsub('energy matrix', 'matrix', final)
+  final = gsub('energy model', 'matrix', final)
+
+  final = gsub('tecnological', 'technologies', final)
+  final = gsub('technological', 'technologies', final)
+  final = gsub('wars', 'war', final)
+  final = gsub('growing', 'growth', final)
+  final = gsub('migratory', 'migration', final)
+  final = gsub('chineses', 'china', final)
+  final = gsub('chinese', 'china', final)
+  final = gsub('powers', 'power', final)
+  final = gsub('break', 'disruption', final)
+  #final = gsub('increased', '', final)
+  
+  resultado <- paste(resultado, final)
+}
+
+pal2 = brewer.pal(8, 'Dark2')
+
+wordcloud(words = resultado, scale = c(4,.8), min.freq = 3, max.words = 5000, random.order = FALSE, random.color = FALSE, colors = pal2)
+
