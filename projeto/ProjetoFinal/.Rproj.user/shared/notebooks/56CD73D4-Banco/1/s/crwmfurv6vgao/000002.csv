@@ -1,2 +1,0 @@
-"0","variaveisSubgrupo <- c(""Segmento_Descricao"", ""Credenciamento"", ""Caixa_Seguradora"", ""Caixa_Seguradora_DIF"", ""Credito_Salario"", ""Debito_Automatico"", ""Credito_Salario_DIF"", ""Debito_Automatico_DIF"")"
-"0","box_plot(credit, c(""winsored_Movimentacoes"", ""Produtos_Qualificados"", ""winsored_Aplicacao_PERC"", ""winsored_Credito_DIF""), variaveisSubgrupo)"
