@@ -1,0 +1,316 @@
+---
+title: "Passo a passo - Evasão Correntistas"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+---
+
+Instalação e importação dos pacotes
+
+```{r message=FALSE}
+
+# install.packages("ggplot2")
+# install.packages("data.table")
+# install.packages("stargazer")
+# install.packages("skimr")
+# install.packages("Rcpp")
+# install.packages("mlbench")
+# install.packages("caretEnsemble")
+# install.packages("rattle")
+# install.packages("xray")
+# install.packages("tidyverse")
+# install.packages("tidyr")
+# install.packages("psych")
+
+library(ggplot2)
+library(data.table)
+library(stargazer)
+library(skimr)
+library(Rcpp)
+library(readxl)
+library(dplyr)
+library(tidyverse)
+library(caret)
+library(mlbench)
+library(caretEnsemble)
+library(rattle)
+
+```
+
+Criação da função que gera os gráficos.
+
+```{r message=FALSE}
+
+### FUNÇÃO
+box_plot = function(data, atributos, atributosSubgrupo, variavelDependente = 'Evadiu'){
+  for (atributo in atributos) {
+    if(length(atributosSubgrupo) > 0){
+      for (atributo2 in atributosSubgrupo){
+      result = ggplot(data = dtAmostra, aes_string(variavelDependente, atributo)) +
+        geom_boxplot(aes_string(fill = atributo2))
+        # geom_boxplot() +
+        labs(x = variavelDependente,
+             y = atributo,
+             title = "Boxplot",
+             subtitle = paste(atributo, variavelDependente, sep = " vs "),
+             caption = "") +
+        theme_bw() 
+        # facet_wrap(~ atributo2)
+      print(result)
+     }
+    }
+    else{
+      result = ggplot(data = dtAmostra, aes_string(variavelDependente, atributo)) +
+        geom_boxplot() +
+        labs(x = variavelDependente,
+             y = atributo,
+             title = "Boxplot",
+             subtitle = paste(atributo, variavelDependente, sep = " vs "),
+             caption = "") +
+        theme_bw() 
+        # facet_wrap(~ atributo2)
+      print(result)      
+    }
+  }
+}
+
+```
+
+Leitura do arquivo feita e análise dos dados
+
+```{r message=FALSE}
+
+dtAmostra <- fread("dadosBanco/Amostra_Modelo_Evasao_Correntistas_v3.csv")
+
+str(dtAmostra)
+
+```
+
+Como é possível verificar, existem uma série de dados que são caracterizados como inteiro, porém na verdade são variáveis que servem para *classificar* um determinado cliente.
+
+Dessa forma, as variáveis foram transformadas em *fatores*.
+
+```{r message=FALSE}
+
+dtAmostra$Evadiu <- as.factor(dtAmostra$Evadiu)
+dtAmostra$Debito_Automatico <- as.factor(dtAmostra$Debito_Automatico)
+dtAmostra$Credito_Salario <- as.factor(dtAmostra$Credito_Salario)
+dtAmostra$Credenciamento <- as.factor(dtAmostra$Credenciamento)
+dtAmostra$Caixa_Seguradora <- as.factor(dtAmostra$Caixa_Seguradora)
+dtAmostra$Pediu_Portabilidade <- as.factor(dtAmostra$Pediu_Portabilidade)
+dtAmostra$Abriu_Reclamacao <- as.factor(dtAmostra$Abriu_Reclamacao)
+dtAmostra$Debito_Automatico_DIF <- as.factor(dtAmostra$Debito_Automatico_DIF)
+dtAmostra$Credito_Salario_DIF <- as.factor(dtAmostra$Credito_Salario_DIF)
+dtAmostra$Caixa_Seguradora_DIF <- as.factor(dtAmostra$Caixa_Seguradora_DIF)
+
+dtAmostra = 
+  dtAmostra %>% 
+  mutate(Evadiu = ifelse(Evadiu == 1, "Sim", "Não")) %>% 
+  mutate(Segmento = ifelse(Segmento == "GV", "Renda_Basica", ifelse(Segmento == "GC", "Classe_Media", ifelse(Segmento == "GR", "Alta_Renda", "Exclusivo"))))
+
+
+str(dtAmostra)
+
+```
+
+A variável **Pediu_Portabilidade** possui um valor constante e, por conta disso, foi retirada.
+
+Como o interesse é buscar predizer a variável **Evadiu**, verificamos todas as outras variáveis em conjunto com a variável alvo para verificar o resultado. 
+
+No entanto, nos deparamos com algo do tipo:
+
+```{r message=FALSE}
+
+box_plot(credit, c("Aplicacao"), NULL)
+
+```
+
+Ou seja, existem outliers com valores muito altos e que, na verdade, não estão dentro da maioria dos dados relevantes (75%).
+
+Assim, aplicamos uma função chamada *winsor* que tem a função de eliminar esses outliers, como foi feito abaixo:
+
+```{r message=FALSE}
+
+dtAmostra = dtAmostra %>% 
+  mutate(winsored_Rentabilidade_PERC = psych::winsor(Rentabilidade_PERC, 0.1)) %>%
+  mutate(winsored_Produtos = psych::winsor(Produtos, 0.01)) %>%
+  mutate(winsored_Produtos_Qualificados_PERC = psych::winsor(Produtos_Qualificados_PERC, 0.01)) %>%
+  mutate(winsored_Produtos_PERC = psych::winsor(Produtos_PERC, 0.01)) %>%
+  mutate(winsored_Movimentacoes = psych::winsor(Movimentacoes, 0.1)) %>%
+  mutate(winsored_Movimentacoes_Anterior = psych::winsor(Movimentacoes_Anterior, 0.1)) %>%
+  mutate(winsored_Movimentacoes_DIF = psych::winsor(Movimentacoes_DIF, 0.1)) %>%
+  mutate(winsored_Movimentacoes_PERC = psych::winsor(Movimentacoes_PERC, 0.1)) %>%
+  mutate(winsored_Aplicacao = psych::winsor(Aplicacao, 0.1)) %>%
+  mutate(winsored_Aplicacao_Anterior = psych::winsor(Aplicacao_Anterior, 0.1)) %>%
+  mutate(winsored_Aplicacao_DIF = psych::winsor(Aplicacao_DIF, 0.1)) %>% 
+  mutate(winsored_Aplicacao_PERC = psych::winsor(Aplicacao_PERC, 0.1)) %>% 
+  mutate(winsored_Credito = psych::winsor(Credito, 0.1)) %>% 
+  mutate(winsored_Credito_Anterior = psych::winsor(Credito_Anterior, 0.1)) %>% 
+  mutate(winsored_Credito_DIF = psych::winsor(Credito_DIF, 0.1)) %>% 
+  mutate(winsored_Credito_PERC = psych::winsor(Credito_PERC, 0.1)) %>% 
+  mutate(winsored_Rentabilidade = psych::winsor(Rentabilidade, 0.1)) %>% 
+  mutate(winsored_Rentabilidade_Anterior = psych::winsor(Rentabilidade_Anterior, 0.1)) %>% 
+  mutate(winsored_Rentabilidade_DIF = psych::winsor(Rentabilidade_DIF, 0.1)) %>% 
+  mutate(winsored_Rentabilidade_PERC = psych::winsor(Rentabilidade_PERC, 0.1))
+
+```
+
+Feito isso, rodamos novamente os gráficos para verificarmos quais das variáveis mais seria interessante de se usar como preditora da variável alvo.
+
+Segue resultado abaixo:
+
+```{r message=FALSE}
+
+variaveisIniciais <- c("Produtos",
+                       "Produtos_Anterior",
+                       "Produtos_DIF",
+                       "winsored_Produtos_Qualificados_PERC",
+                       "Produtos_Qualificados_DIF",
+                       "Produtos_Qualificados_Anterior",
+                       "Produtos_Qualificados",
+                       "winsored_Produtos_PERC",
+                       "winsored_Aplicacao",
+                       "winsored_Aplicacao_Anterior",
+                       "winsored_Aplicacao_PERC", 
+                       "winsored_Aplicacao_DIF",
+                       "winsored_Movimentacoes",
+                       "winsored_Movimentacoes_DIF",
+                       "winsored_Movimentacoes_PERC", 
+                       "winsored_Movimentacoes_Anterior", 
+                       "winsored_Credito", 
+                       "winsored_Credito_Anterior", 
+                       "winsored_Credito_PERC", 
+                       "winsored_Credito_DIF", 
+                       "winsored_Rentabilidade", 
+                       "winsored_Rentabilidade_DIF", 
+                       "winsored_Rentabilidade_Anterior", 
+                       "winsored_Rentabilidade_PERC")
+
+box_plot(credit, variaveisIniciais, NULL)
+
+```
+
+É interessante colocar também que aquelas variáveis que foram identificadas como fatores não tiveram um bom relacionamento a preditora, assim foram utilizadas como uma *terceira variável de análise (visão)* em conjunto com aquelas variáveis que tiveram um melhor resultado na predição:
+
+```{r message=FALSE}
+
+variaveisSubgrupo <- c("Segmento", "Credenciamento", "Caixa_Seguradora", "Caixa_Seguradora_DIF", "Credito_Salario", "Debito_Automatico", "Credito_Salario_DIF", "Debito_Automatico_DIF")
+
+box_plot(credit, c("winsored_Movimentacoes", "Produtos_Qualificados", "winsored_Aplicacao_PERC", "winsored_Credito_DIF"), variaveisSubgrupo)
+
+```
+
+Agora começamos o trabalho de execução da rotina de regressão.
+
+Criação das dummy variables.
+
+```{r message=FALSE}
+
+str(dtAmostra)
+
+set.seed(1986)
+
+dtAmostra =
+  dtAmostra %>%
+  mutate_if(is.ordered, as.numeric) %>%
+  mutate(EvadiuTipo = as.numeric(Evadiu)) %>%
+  mutate(Segmento_Num1 = ifelse(Segmento == "GV", 1, ifelse(Segmento == "GC", 2, ifelse(Segmento == "GR", 3, 4)))) %>% 
+  mutate(Segmento_Num = as.factor(Segmento_Num1)) %>% 
+  select(-Id, -Evadiu, -Evadiu_formatado, -Segmento_Descricao, -Segmento, -Segmento_Num1, -Pediu_Portabilidade, -Abriu_Reclamacao) %>%
+  drop_na() %>%
+  as.data.table()
+
+dummyVar_model = dummyVars(formula = ~ .,
+                           data = dtAmostra)
+
+data = as.data.table(predict(dummyVar_model, newdata = dtAmostra))
+str(data)
+
+problematicVariables = nearZeroVar(data, names = T)
+problematicVariables
+
+data =
+  data %>%
+  select(-problematicVariables) %>%
+  mutate(EvadiuTipo = case_when(
+                            EvadiuTipo == 2 ~ "Não",
+                            EvadiuTipo == 1 ~ "Sim"))
+str(data)
+
+```
+
+Criação as estatísticas
+
+```{r message=FALSE}
+
+stargazer::stargazer(data, type = "text")
+skimr::skim_to_wide(data)
+xray::anomalies(data)
+
+```
+
+Criando os modelos de treinamento da regressão
+
+```{r message=FALSE}
+
+control <- trainControl(method = "repeatedcv", #boot, cv, LOOCV, timeslice OR adaptive etc.
+                        number = 10,
+                        repeats = 20,
+                        classProbs = TRUE,
+                        summaryFunction = twoClassSummary,
+                        savePredictions = "final",
+                        allowParallel = TRUE)
+
+```
+
+Rodando árvore de decisão com repeated k-fold cross-validation
+
+```{r message=FALSE}
+
+model_arvoreDecisao1 = caret::train(EvadiuTipo ~ .,
+                                    data         = data,
+                                    trControl    = control,
+                                    metric       = "ROC",
+                                    method       = 'rpart',
+                                    tuneLength   = 20)
+
+model_arvoreDecisao1
+
+rattle::fancyRpartPlot(model_arvoreDecisao1$finalModel)
+
+```
+
+Juntando todos os classificadores em um comando só
+
+```{r message=FALSE}
+
+models =
+      caretList(EvadiuTipo ~ .,
+                data = dtAmostra,
+                trControl = control,
+                metric = "ROC",
+                tuneList = list(#adaboost     = caretModelSpec(method = "adaboost"), #muito demorado para rodar
+                                arvoreDecisao = caretModelSpec(method = "rpart",
+                                                               tuneGrid = expand.grid(cp = seq(0, 10, length = 20))),
+                                knn           = caretModelSpec(method = "knn"),
+                                logit         = caretModelSpec(method = "glm", family = "binomial"),
+                                elasticnet    = caretModelSpec(method = "glmnet"),
+                                redeNeural    = caretModelSpec(method = "mlpML"),
+                                rf            = caretModelSpec(method = "ranger")),
+                preProcess = c("knnImpute", "nzv", "center", "scale"))
+
+# Performance analysis ----------------------------------------------------
+
+modelsPerformance = resamples(models)
+
+bwplot(modelsPerformance)
+dotplot(modelsPerformance)
+
+
+modelCor(modelsPerformance)
+
+xyplot(modelsPerformance)
+
+```
