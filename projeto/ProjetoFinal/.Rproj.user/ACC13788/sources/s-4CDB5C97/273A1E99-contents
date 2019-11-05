@@ -14,7 +14,6 @@ library(rattle)
 
 #Descrição dos métodos: https://topepo.github.io/caret/train-models-by-tag.html#accepts-case-weights
 
-
 set.seed(1986)
 
 data(BreastCancer)

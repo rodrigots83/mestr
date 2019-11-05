@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1572920033350.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5E8C2C96",
+    "lastKnownWriteTime" : 1572936067,
+    "last_content_update" : 1572936067264,
+    "path" : "D:/GitHub/weak_signals/projeto/ProjetoFinal/Banco_Script_Final.R",
+    "project_path" : "Banco_Script_Final.R",
+    "properties" : {
+        "cursorPosition" : "302,13",
+        "scrollLine" : "301"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
