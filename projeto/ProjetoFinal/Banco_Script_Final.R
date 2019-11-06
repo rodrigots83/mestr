@@ -9,7 +9,7 @@
 # install.packages("xray")
 # install.packages("tidyverse")
 # install.packages("tidyr")
-# install.packages("psych")
+# install.packages("psych") 
 
 library(ggplot2)
 library(data.table)
