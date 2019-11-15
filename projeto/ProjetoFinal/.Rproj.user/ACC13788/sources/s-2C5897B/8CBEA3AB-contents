@@ -27,10 +27,10 @@ library(rattle)
 ###########################################################################
 ###########################################################################
 ### FUNÇÃO DE CRIAÇÃO DE ARQUIVO
-# gera_arquivo_grafico = function(tituloGrafico){
-#   nomeArquivo <- str_c(tituloGrafico,".jpeg")
-#   ggsave(filename = nomeArquivo, plot = last_plot(), path = getwd(), width = )
-# }
+gera_arquivo_grafico = function(tituloGrafico, extensao){
+  nomeArquivo <- str_c(tituloGrafico, extensao)
+  ggsave(filename = nomeArquivo, plot = last_plot(), path = str_c(getwd(), "/Graficos"), width = )
+}
 
 ###########################################################################
 ###########################################################################
@@ -218,7 +218,7 @@ table(data$EvadiuTipo)
 ### Rodando o modelo de machine learning
 control <- trainControl(method = "repeatedcv", #boot, cv, LOOCV, timeslice OR adaptive etc.
                         number = 10,
-                        repeats = 1,
+                        repeats = 3,
                         classProbs = TRUE,
                         summaryFunction = twoClassSummary,
                         savePredictions = "final")
@@ -285,11 +285,27 @@ models =
 ### Performance analysis ----------------------------------------------------
 
 modelsPerformance = resamples(models)
+pdf(str_c(getwd(), '/Graficos/', '001_bwplot.pdf'))
 bwplot(modelsPerformance)
-dotplot(modelsPerformance)
-modelCor(modelsPerformance)
-xyplot(modelsPerformance)
+dev.off()
 
+pdf(str_c(getwd(), '/Graficos/', '002_dotplot.pdf'))
+dotplot(modelsPerformance)
+dev.off()
+
+modelCor(modelsPerformance)
+
+pdf(str_c(getwd(), '/Graficos/', '004_xyplot.pdf'))
+xyplot(modelsPerformance)
+dev.off()
+
+
+### CONFUSION MATRIX
+confusionMatrix(models$rf)
+confusionMatrix(models$knn)
+confusionMatrix(models$elasticnet)
+confusionMatrix(models$logit)
+confusionMatrix(models$redeNeural)
 
 # Ensemble ----------------------------------------------------------------
 
@@ -297,18 +313,26 @@ ensembleModel <- caretEnsemble(models, metric = "ROC", trControl = control)
 
 summary(ensembleModel)
 
+pdf(str_c(getwd(), '/Graficos/', '006_ensembleModel.pdf'))
 plot(ensembleModel)
+dev.off()
 
 # Feature selection 0 -----------------------------------------------------
 
 featureSelection_arvoreDecisao = varImp(models$arvoreDecisao)
+pdf(str_c(getwd(), '/Graficos/', '007_featureSelection_arvoreDecisao.pdf'))
 plot(featureSelection_arvoreDecisao)
+dev.off()
 
 featureSelection_logit = varImp(models$logit)
+pdf(str_c(getwd(), '/Graficos/', '008_featureSelection_logit.pdf'))
 plot(featureSelection_logit)
+dev.off()
 
 featureSelection_elasticNet = varImp(models$elasticnet)
+pdf(str_c(getwd(), '/Graficos/', '009_featureSelection_elasticNet.pdf'))
 plot(featureSelection_elasticNet)
+dev.off()
 
 # Qual o rank médio?
 featureSelection_arvoreDecisao_results =
@@ -343,6 +367,7 @@ featureSelection_avg =
   distinct(variable, rankMedio) %>%
   arrange(rankMedio)
 
+pdf(str_c(getwd(), '/Graficos/', '010_featureSelection_avg.pdf'))
 featureSelection_avg %>%
   ggplot(aes(y = as.factor(rankMedio), x = rankMedio)) +
   geom_segment( aes(x = 0, xend = rankMedio, yend = as.factor(rankMedio))) +
@@ -353,3 +378,4 @@ featureSelection_avg %>%
        x = "Rank médio",
        y = "") +
   theme_bw()
+dev.off()

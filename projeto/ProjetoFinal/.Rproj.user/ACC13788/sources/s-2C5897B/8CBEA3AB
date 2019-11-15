@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "498751649",
+    "hash" : "0",
     "id" : "8CBEA3AB",
-    "lastKnownWriteTime" : 1573094367,
-    "last_content_update" : 1573094367823,
+    "lastKnownWriteTime" : 1573827659,
+    "last_content_update" : 1573827659478,
     "path" : "D:/GitHub/weak_signals/projeto/ProjetoFinal/Banco_Script_Final.R",
     "project_path" : "Banco_Script_Final.R",
     "properties" : {
-        "cursorPosition" : "221,42",
-        "scrollLine" : "210"
+        "cursorPosition" : "352,29",
+        "scrollLine" : "344"
     },
     "relative_order" : 1,
     "source_on_save" : false,
