@@ -1,0 +1,20 @@
+Deve existir um local para cadastrar informações acerca de um sinal fraco possível de existir. Levantar os campos dentro da literatura.
+
+Módulo de pesquisa ambiental
+
+Um módulo de pesquisa ambiental (que poderá ser feito no próprio google através de um chamado web-crawling). Esse módulo deverá percorrer sites diversos afim de buscar conjuntos de informações contendo determinados conjuntos de palavras-chave (essas palavras-chave seriam as áreas de interesse de encontrar tendências). O resultado desse módulo são sites que deverão ser armazenados para serem lidos posteriormente.
+
+Módulo de leitura de notícias
+
+Contendo uma lista de sites, o módulo faz uma lista de todas as palavras retirando as famigeradas (stopwords) que não agregam nenhum tipo de valor e são utilizadas unicamente para aumentar a quantidade de texto existente. As palavras encontradas alimentam uma lista de palavras já consideradas importantes pela quantidade de vezes que já apareceram em outros links.
+
+Módulo de manutenção de áreas
+
+O sistema deverá manter um local para manutenção de palavras-chave que inicialmente definem uma área de busca (por exemplo, dentro de segurança pública: policia, arma, armamento, desarmamento, prisão, juizado, juiz, dentre outras).
+
+CARACTERÍSTICAS DE UMA INFORMAÇÃO COMPETITIVA
+Quality of competitive intelligence information: accuracy, completeness, currency/freshness, 
+importance, relevance, reliability, timeliness, understandability, usefulness [TEO 01, p. 75].
+
+A ferramenta deverá entender que os sinais fracos necessitam devem ser avaliados sob duas óticas, aqueles que estão sendo encontrados e aqueles que devem ser monitorados. A concepção de um radar seria bastante interessante com fins de verificar o quanto um termo ou conjunto de termos possui relevância em meio a outros, bem como o quanto ele está sendo comentado na comunidade.
+
